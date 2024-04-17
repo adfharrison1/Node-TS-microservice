@@ -4,7 +4,6 @@ coverage/
 yarn-error.log
 yarn-debug.log
 .env
-README-original.md
 
 # Editor files
 .idea/
