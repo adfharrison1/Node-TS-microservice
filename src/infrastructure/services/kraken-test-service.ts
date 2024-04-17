@@ -25,15 +25,17 @@ export function makeKrakenTestService({
         }>;
       }
 
+    const headers = {
+        'x-api-key': config.apiKey,
+    }
+
       
   return {
     async createOutages({siteId, outages} ) {
       console.log(`creating ${outages.length} outages for site: ${siteId}`)
       try {
         await axios.post(`${config.apiUrl}/site-outages/${siteId}`, {
-          headers: {
-            Authorization: config.apiKey,
-          },
+          headers,
           data: outages
         });
       } catch (error) {
@@ -49,9 +51,7 @@ export function makeKrakenTestService({
         console.log(`fetching all outages`)
         try {
           const result = await axios.get<Array<KrakenOutage>>(`${config.apiUrl}/outages`, {
-            headers: {
-              Authorization: config.apiKey,
-            }
+            headers
           });
 
           return result.data.map((outage)=>{
@@ -65,7 +65,6 @@ export function makeKrakenTestService({
           if (error instanceof Error) {
             console.log(`Error fetching outages: ${error.message}`)
           }
-  
           throw error;
         }
       },
@@ -74,9 +73,7 @@ export function makeKrakenTestService({
     console.log(`fetching site info for site: ${siteId}`)
     try {
         const {data} = await axios.get<KrakenSiteInfo>(`${config.apiUrl}/site-info/${siteId}`, {
-        headers: {
-            Authorization: config.apiKey,
-        }
+        headers
         });
 
         return new Site({
