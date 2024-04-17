@@ -17,6 +17,7 @@
       "forceConsistentCasingInFileNames": true,
       "strict": true,
       "skipLibCheck": true,
+      "typeRoots": ["./@types", "./node_modules/@types"],
     },
     "include": ["@types","src/**/*"],
     "ts-node": {

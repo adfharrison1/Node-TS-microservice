@@ -4,7 +4,7 @@ import { EnhancedOutage, Outage, Site } from "@domain/entities";
 // concern always conforms to this interface, the application layer doesnt need refactoring when the concern changes 
 // (maybe we would swap API calls for DB interactions )
 export interface IKrakenTestService {
-    createSite(outages: Array<EnhancedOutage>): Promise<void>;
+    createOutages({siteId, outages}: {siteId: string, outages: Array<EnhancedOutage>}): Promise<void>;
     getOutages(): Promise<Array<Outage>>;
     getSiteInfoById(siteId: string): Promise<Site>
   }
