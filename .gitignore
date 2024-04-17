@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+yarn-error.log
+yarn-debug.log
+.env
+
+# Editor files
+.idea/
+.vscode/
+.dccache
+
+# OS metadata
+.DS_Store
+Thumbs.db
