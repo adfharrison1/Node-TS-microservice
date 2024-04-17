@@ -9,3 +9,10 @@
 
 - the gitignore is set up in a pretty default way to minimize mess in the repo and unnecessary or sensitive info getting into public domain (expect your API key lol)
 
+- service roughly follows a Clean Architecture principle, not precisely, as i didnt want to over-complicate things, but the implementation of interfaces between layers would make things hard to break and easy to either swap out implementations or extend them
+  
+- controllers are seperate to follow a RESTful pattern seperated on route concerns, would make them easier to understand as methods were added to each route.
+
+- generally prefer function args as objects where applicable, helps typing and neatness with destructuring.
+
+- 
