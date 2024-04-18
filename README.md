@@ -36,3 +36,5 @@
 - </br>
   
 - Id probably implement a proper request logging mechanism instead of all the console logs - maybe via event to a logging service.
+
+- i think that the POST endpoint wont work unless i get exactly the outages it expects, so i will leave it as it is, for showcasing

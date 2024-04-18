@@ -1,6 +1,6 @@
 import { Dependencies } from '@infrastructure/di';
 import { IKrakenTestService } from '@application/common/interfaces';
-import { EnhancedOutage, Outage, Site } from '@domain/entities';
+import {  Outage, Site } from '@domain/entities';
 
 // in here you can see how the infra concern is forced to conform to the interface, taking defined args and 
 // returning domain entities
@@ -34,9 +34,18 @@ export function makeKrakenTestService({
     async createOutages({siteId, outages} ) {
       console.log(`creating ${outages.length} outages for site: ${siteId}`)
       try {
+        console.log('outages >>', outages)
+        const mappedOutagesToApiBody = outages.map((outage) => {
+          return {
+            ...outage,
+            begin: outage.begin.toISOString(),
+            end: outage.end.toISOString(),
+          }
+        })
+
         await axios.post(`${config.apiUrl}/site-outages/${siteId}`, {
           headers,
-          data: outages
+          data: mappedOutagesToApiBody
         });
       } catch (error) {
         if (error instanceof Error) {

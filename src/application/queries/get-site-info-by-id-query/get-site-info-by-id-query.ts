@@ -4,8 +4,8 @@ export type GetSiteInfoByIdQuery = {
     siteId: string;
 }
 
-export function makeGetSiteInfoByIdQuery({} : Dependencies){
+export function makeGetSiteInfoByIdQuery({krakenTestService} : Dependencies){
     return async function makeGetSiteInfoByIdQueryetSiteInfoByIdQuery(query: GetSiteInfoByIdQuery) {
-        return `siteId for for getting info was: ${query.siteId}`;
+        return await krakenTestService.getSiteInfoById(query.siteId)
     }
 }
