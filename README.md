@@ -23,6 +23,8 @@
 - im also using dependency injection, again, im aware this is slightly more complicated, however its a good way to ensure a service is easily testable, allows me to mock stubs of dependencies if need be. It creates inversion of control to make sure that instances of dependencies are created away from the code that consumes them, allowing them to be swapped out in only one place, and making the code more maintainable.
 </br>
 
+- CQRS is used to completely seperate the command an query logic, makes them much more scaleable as they can all be changed/added to individually. it also means that any domain entities produced (i like using DDD for design) can be bespoke to the specific usecases (although they dont absolutely need to be). it also means that the C's and Q's can be individually hooked up to whichever web/infra interface required - i could easily hook eg event subscribers to queries but not the commands.
+
 - `Awilix.scopePerRequest()` is used to isolate requests to their own scope, meaning more efficiency and stability - resources are cleaned up per request, and failure of one request shouldn't affect any others. If we were using a DB transaction, i could scope it to the request and roll it back at the end on failure (or that could be handled by the application code)
 </br>
 
@@ -33,7 +35,7 @@
 </br>
 
 - Id probably prefer to paginate the get outages endpoint but i didnt have the time to see if you API supported it - id definitely do it if querying a DB
-- </br>
+</br>
   
 - Id probably implement a proper request logging mechanism instead of all the console logs - maybe via event to a logging service.
 
