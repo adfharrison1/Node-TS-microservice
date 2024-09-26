@@ -1,2 +1,2 @@
-export * from './IConfig'
-export * from './IKrakenTestService'
+export * from './IConfig';
+export * from './IKrakenTestService';

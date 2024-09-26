@@ -1,28 +1,27 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "@application/*": ["src/application/*"],
-        "@domain/*": ["src/domain/*"],
-        "@infrastructure/*": ["src/infrastructure/*"],
-        "@web/*": ["src/web/*"],
-      },
-      "target": "esnext",
-      "lib": ["esnext"],
-      "module": "commonjs",
-      "moduleResolution": "node",
-      "allowSyntheticDefaultImports": true,
-      "esModuleInterop": true,
-      "outDir": "./dist",
-      "forceConsistentCasingInFileNames": true,
-      "strict": true,
-      "skipLibCheck": true,
-      "typeRoots": ["./@types", "./node_modules/@types"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@application/*": ["src/application/*"],
+      "@domain/*": ["src/domain/*"],
+      "@infrastructure/*": ["src/infrastructure/*"],
+      "@web/*": ["src/web/*"]
     },
-    "include": ["@types","src/**/*"],
-    "ts-node": {
-      "files": true,
-      "logError": true
-    }
+    "target": "esnext",
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "typeRoots": ["./@types", "./node_modules/@types"]
+  },
+  "include": ["@types", "src/**/*"],
+  "ts-node": {
+    "files": true,
+    "logError": true
   }
-  
+}

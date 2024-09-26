@@ -1,4 +1,4 @@
 export type IConfig = {
-    apiKey: string
-    apiUrl: string
-  }
+  apiKey: string;
+  apiUrl: string;
+};

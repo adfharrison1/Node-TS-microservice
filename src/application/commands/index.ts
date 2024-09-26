@@ -6,7 +6,7 @@ import { makeCreateSiteOutageCommand } from './create-site-outage-command';
 // i could also add any number of extra commands here without creating more fuss elsewhere
 
 export function makeCommands(dependencies: Dependencies) {
-    return {
-      createSiteOutageCommand: makeCreateSiteOutageCommand(dependencies)
-  }
+  return {
+    createSiteOutageCommand: makeCreateSiteOutageCommand(dependencies),
+  };
 }

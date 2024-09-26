@@ -1,1 +1,1 @@
-export * from './kraken-test-service'
+export * from './kraken-test-service';
