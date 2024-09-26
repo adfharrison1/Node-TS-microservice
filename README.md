@@ -1,11 +1,8 @@
-### notes  - please read first!
-- I had a full day off and decided to enjoy myself with this extra piece of work. Its basically a wrapper over your test API, showcasing some software design patterns - it shouldn't be too complex, but i fully acknowledge that it's a bit overkill for the scope of the project - however i think it shows that I understand how a real-world service might be designed, particularly if it was intended to be extended and scaled, and used as a stable and reliable production service, where its lifecycle might also involve adding lots more dependencies, and even swapping them out, like changing database technology - the CQRS, Dependency Injection and Clean Architecture principles here would allow that to be done much more easily. Didnt get everything i wanted done, nor tests nor error handling, but it shows a good picture of where im at in terms of system design
+### notes  
+- This is a project microservice, intended to be extended and scaled, and used as a stable and reliable production service, where its lifecycle might also involve adding lots more dependencies, and even swapping them out, like changing database technology - the CQRS, Dependency Injection and Clean Architecture principles here would allow that to be done much more easily. 
 </br>
 
-- If this were intended to be a serverless API, running on individual lambdas per handler for instance, i would take a different approach most likely, although the CQRS, IoC and clean architecture principles might still apply. 
-</br>
-
-- Alongside just running locally in `dev` mode, Ive chosen to also provide a containerized service that could be deployed (with the relevant infra additions) to your VPC or equivalent, to show that i know how to use Docker, no other reason really.
+- Alongside just running locally in `dev` mode, Ive chosen to also provide a containerized service that could be deployed (with the relevant infra additions) to a VPC or equivalent, to show that i know how to use Docker, no other reason really.
 </br>
 
 - you can run `yarn` then `yarn build` then `yarn dev` to run without docker (i use yarn because im most familiar) and then you can interact with the service at `localhost:3000` - this method would be most useful for local dev.
@@ -33,10 +30,5 @@
 
 - generally prefer function args as objects where applicable, helps typing and neatness with destructuring.
 </br>
-
-- Id probably prefer to paginate the get outages endpoint but i didnt have the time to see if you API supported it - id definitely do it if querying a DB
-</br>
   
 - Id probably implement a proper request logging mechanism instead of all the console logs - maybe via event to a logging service.
-
-- i think that the POST endpoint wont work unless i get exactly the outages it expects, so i will leave it as it is, for showcasing
